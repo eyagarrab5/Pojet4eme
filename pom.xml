@@ -65,6 +65,17 @@
             <version>3.2.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- Ajoutez dans la section <dependencies> -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <version>1.12.0</version>
+        </dependency>
     </dependencies>
     <distributionManagement>
         <repository>
@@ -88,6 +99,7 @@
                     <source>17</source>
                     <target>17</target>
                 </configuration>
+
             </plugin>
 
             <!-- Spring Boot Plugin -->
@@ -96,7 +108,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <mainClass>tn.esprit.OrderApplication</mainClass>
+                    <mainClass>tn.esprit.ApiApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -114,7 +126,10 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>tn.esprit.MainApp</mainClass>
+                    <mainClass>tn.esprit.ApiApplication</mainClass>
+
                 </configuration>
+
             </plugin>
         </plugins>
     </build>
